@@ -1,0 +1,11 @@
+        // Configuração do botão de "play"
+        this.playBt = this.add.image(400, 300, 'play')
+            .setScale(.2).setOrigin(0, 0).setInteractive().setVisible(true);
+        // Dentro do método create, após a configuração do botão "play"
+        this.playBt.on('pointerdown', () => {
+            this.scene.start('Scene02'); // Muda para a cena 'scene02'
+        });
+
+
+
+        this.load.image('play', "assets/play_bt.png"); // Carregando a imagem do botão "play"
