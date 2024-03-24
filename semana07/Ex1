@@ -1,0 +1,8 @@
+idade -> input ("Escreva seu nome")
+Se idade < 16
+    Não pode votar
+Se não
+    Se idade <= 16 e idade < 18
+        Voto opcional
+    Se não 
+        Voto obrigatório
