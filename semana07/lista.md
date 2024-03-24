@@ -288,7 +288,22 @@ ______
 
 Considere a fórumla de atualização velocidade:
 ```
-    velocidade = velocidadeInicial + aceleracao*tempo
+    veloMaxima = x
+    TempoMaximo = y
+    diatancia = z
+    tempo = 0
+    DitanciaPercorrida = 0
+    enquanto distanciaPercorrida <= distancia e tempoMaximo >= tempo
+        velocidade = velocidadeInicial + aceleracao*tempo
+        tempo += 1
+        distancia  = valocidade/tempo
+        se DistanciaPercorrida <= distancia 
+            retornar tempo
+            sair do loop
+    se tempo >= TempoMaximo
+        retornar "A corrida não pode ser completada dentro do TempoMaximo."
+    Se não
+        retornar tempo
 ```
 
 ______
@@ -319,4 +334,40 @@ matrizB <- [[9, 8, 7], [6, 5, 4], [3, 2, 1]]
 matrizSoma <- SomaDeMatrizes(matrizA, matrizB)
 Escrever("Soma das matrizes:")
 ImprimirMatriz(matrizSoma)
+
+
+
+Multiplicação:
+
+Função MultiplicarMatrizes(matrizA, matrizB):
+    # Verifica se o número de colunas da matrizA é igual ao número de linhas da matrizB
+    Se tamanho(matrizA[0]) ≠ tamanho(matrizB) então:
+        Retornar "As matrizes não podem ser multiplicadas. O número de colunas da primeira matriz não é igual ao número de linhas da segunda matriz."
+    Senão:
+        linhasA <- tamanho(matrizA)
+        colunasA <- tamanho(matrizA[0])
+        colunasB <- tamanho(matrizB[0])
+        matrizResultado <- novaMatriz(linhasA, colunasB)
+
+        # Loop para percorrer cada linha da matrizA
+        Para i de 0 até linhasA-1 faça:
+            # Loop para percorrer cada coluna da matrizB
+            Para j de 0 até colunasB-1 faça:
+                # Inicializa o elemento da matriz resultante como 0
+                matrizResultado[i][j] <- 0
+                # Loop para calcular o produto escalar da linha i da matrizA e a coluna j da matrizB
+                Para k de 0 até colunasA-1 faça:
+                    matrizResultado[i][j] <- matrizResultado[i][j] + matrizA[i][k] * matrizB[k][j]
+
+        Retornar matrizResultado
+
+# Exemplo de uso da função
+matrizA <- [[1, 2, 3], [4, 5, 6]]
+matrizB <- [[7, 8], [9, 10], [11, 12]]
+
+matrizProduto <- MultiplicarMatrizes(matrizA, matrizB)
+Escrever("Produto das matrizes:")
+ImprimirMatriz(matrizProduto)
+
+
 ```
